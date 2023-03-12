@@ -1,10 +1,10 @@
 import { Router } from "express";
 const router = Router()
 
-import * as ctrl from './controller'
+import * as ctrl from './foods.controller'
 
 router.get('/', ctrl.get)
-// router.create('/create', ctrl.create)
+router.post('/', ctrl.post)
 router.get('/:id', ctrl.getById)
 router.put('/:id', ctrl.updateById)
 router.delete('/:id', ctrl.deleteById)

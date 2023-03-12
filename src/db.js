@@ -1,5 +1,12 @@
 import mongoose from 'mongoose'
 
-mongoose.connect("mongodb://localhost/gntry")
-    .then((data) => { console.log("db conected") })
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+  }
+
+
+
+
+mongoose.connect(process.env.DBURI)
+    .then( db => { console.log("db conected") })
     .catch((error) => { console.log(error) })

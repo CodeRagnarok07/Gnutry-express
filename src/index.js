@@ -1,4 +1,5 @@
 import app from './routes/app'
+import './db'
 
 
 const port = 3000
