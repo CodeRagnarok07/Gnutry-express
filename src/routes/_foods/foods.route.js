@@ -1,8 +1,4 @@
 import { Router } from "express";
-import FoodDb from '../models/foods.model'
-
-import { verifyToken } from '../middlewares'
-
 const router = Router()
 
 // import * as ctrl from './foods.controller'
@@ -11,7 +7,7 @@ router.get('/', async (req, res) => {
     const products = await FoodDb.find();
     res.json(products)
 })
-router.post('/', verifyToken, async (req, res) => {
+router.post('/', async (req, res) => {
     const {
         name,
         category,
